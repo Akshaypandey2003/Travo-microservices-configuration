@@ -4,5 +4,3 @@ spring:
   data:
     mongodb:
       database: Users
-
-10MB
