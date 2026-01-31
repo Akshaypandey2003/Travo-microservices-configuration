@@ -1,9 +1,3 @@
-cloudinary: 
- cloud.name: dwg7vniow
- api.key: 845149336471784
- api:
-  secret: Km9V_cOzTUmDWVVVnIIPARmz_Dg
-
 spring:
   data:
     mongodb:
