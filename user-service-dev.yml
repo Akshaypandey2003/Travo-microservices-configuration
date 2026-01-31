@@ -1,13 +1,10 @@
-server:
-  port: ${PORT:8080}
+
 
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017
       database: Users
-  application:
-    name: USER-SERVICE
+
   # File size limit for multipart requests
   servlet:
     multipart:
