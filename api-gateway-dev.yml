@@ -1,0 +1,69 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: HOTEL-INFO
+        uri: lb://HOTEL-INFO
+        predicates:
+        - Path=/hotelInfo/**
+
+      - id: HOTEL-SERVICE
+        uri: lb://HOTEL-SERVICE
+        predicates:
+        - Path=/hotel/**
+
+      - id: REVIEW-SERVICE
+        uri: lb://REVIEW-SERVICE
+        predicates:
+        - Path=/review/**
+
+      - id: ROOM-SERVICE
+        uri: lb://ROOM-SERVICE
+        predicates:
+        - Path=/rooms/**
+
+      - id: BOOKING-SERVICE
+        uri: lb://BOOKING-SERVICE
+        predicates:
+        - Path=/booking/**
+
+      - id: USER-SERVICE-SECURED
+        uri: lb://user-service
+        predicates:
+        - Path=/user/**,/connection/**
+
+      - id: USER-SERVICE-PUBLIC
+        uri: lb://user-service
+        predicates:
+        - Path=/auth/**,/user/public/**
+        
+      
+      - id: TRIPS-SERVICE
+        uri: lb://trip-service
+        predicates:
+        - Path=/trip/**
+
+      - id: FEEDBACK-SERVICE
+        uri: lb://feedback-service
+        predicates:
+        - Path=/feedback/**
+
+      - id: CHATS-SERVICE
+        uri: lb://chat-service
+        predicates:
+        - Path=/chat/**,/chat/message/**
+
+      - id: BLOGS-SERVICE
+        uri: lb://blog-service
+        predicates:
+        - Path=/blog/**,/comment/**
+
+      - id: NOTIFICATION-SERVICE
+        uri: lb://notification-service
+        predicates:
+          - Path=/ws/**,/notification/**
+      
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
