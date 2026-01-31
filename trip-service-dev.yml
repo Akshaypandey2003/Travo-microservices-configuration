@@ -1,14 +1,8 @@
-server:
-  port: 8090
-
-
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017
       database: Trips
-  application:
-    name: TRIPS-SERVICE
+      
   # File size limit for multipart requests
   servlet:
     multipart:
