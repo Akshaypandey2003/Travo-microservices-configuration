@@ -8,9 +8,11 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 cloudinary:
- cloud.name: dwg7vniow
- api.key: 845149336471784
- api.secret: Km9V_cOzTUmDWVVVnIIPARmz_Dg
+ cloud:
+  name: dwg7vniow
+ api:
+  key: 845149336471784
+  secret: Km9V_cOzTUmDWVVVnIIPARmz_Dg
 
  
 spring:
