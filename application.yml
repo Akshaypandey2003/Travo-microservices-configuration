@@ -1,0 +1,51 @@
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+cloudinary:
+ cloud:
+  name: dwg7vniow
+ api:
+  key: 845149336471784
+  secret: Km9V_cOzTUmDWVVVnIIPARmz_Dg
+
+ 
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+   #Security Configuration
+  security:
+    user:
+      name: admin
+      password: password
+      
+#KAfka Configuration
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+  # File size limit for multipart requests
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      
+#JWT Configuration
+jwt:
+  secret: ${JWT_SECRET:my-super-secret-jwt-key-my-super-secret-jwt-key}
+  expiration: ${JWT_EXPIRATION:3600000}
