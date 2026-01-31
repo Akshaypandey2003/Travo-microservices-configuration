@@ -9,6 +9,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     
 spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
    #Security Configuration
   security:
     user:
